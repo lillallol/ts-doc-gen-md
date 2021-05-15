@@ -1,0 +1,1 @@
+export { tsDocGenMd } from "./tsDocGenMd";

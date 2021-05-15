@@ -1,0 +1,8 @@
+bin
+coverage
+node_modules
+dist
+TBD
+/TODO.md
+generated-doc
+/documentation.txt

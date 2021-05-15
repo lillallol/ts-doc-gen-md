@@ -1,0 +1,1 @@
+export const thisIsA = "mock test file";

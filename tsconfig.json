@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "strict": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "skipDefaultLibCheck": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "module": "CommonJS",
+        "declaration": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "src/**/*.mock.d.ts",
+        "src/**/*.mock.ts"
+    ]
+}

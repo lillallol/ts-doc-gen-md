@@ -1,0 +1,2 @@
+src/**/*.mock.ts
+src/**/*.mock.d.ts

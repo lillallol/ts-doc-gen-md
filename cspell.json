@@ -1,0 +1,39 @@
+{
+    "language": "en",
+    "ignorePaths": [
+        "**/test/**",
+        "./**/*.mock.d.ts",
+        "dist/**",
+        "node_modules/**",
+        "./**/*.pdf",
+        "./**/*.svg",
+        "./**/*.html",
+        "package-lock.json",
+        "jest.config.js",
+        "coverage/**",
+        "TBD/**",
+        "TODO.md",
+        "tsconfig.build.json",
+        "tsconfig.json",
+        "generated-doc/**"
+    ],
+    "words": [
+        "lillallol",
+        "unimported",
+        "typedoc",
+        "destructured",
+        "ecmascript",
+        "endregion",
+        "astexplorer",
+        "typeof",
+        "diplets",
+        "dedup",
+        "deduped",
+        "setted",
+        "keyof",
+        "unimportedrc",
+        "NELE",
+        "INSD",
+        "NEFE"
+    ]
+}

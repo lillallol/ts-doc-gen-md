@@ -1,0 +1,69 @@
+{
+    "name": "ts-doc-gen-md",
+    "bin": "./bin/bin.js",
+    "version": "0.0.0",
+    "description": "Documentation generation library in markdown, for typescript projects.",
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "scripts": {
+        "check-updates": "ncu",
+        "update": "npx ncu -u;npm install",
+        "dead-files": "unimported",
+        "spell-check": "cspell \"./**/*\"",
+        "lint": "tsc --noEmit && eslint ./src/**/*.ts --max-warnings=0",
+        "test": "rm -rf ./coverage; npx jest --clearCache; npx jest ./src/ --coverage --silent",
+        "build-ts": "rm -rf ./dist; npx tsc -p ./tsconfig.build.json",
+        "build-bin": "rm -rf ./bin/bin.js && fn-to-cli",
+        "build-md": "rm -rf ./documentation.txt;node ./bin/bin.js -h > documentation.txt;npx md-in-place",
+        "build": "npm run build-ts && npm run build-bin && npm run build-md",
+        "pre-bump": "npm run dead-files && npm run spell-check && npm run lint && npm run test && npm run build && git add --all && git commit",
+        "release": "npm run pre-bump && npm publish --access public && npm run after-bump",
+        "bump-patch": "npm run pre-bump && npm version patch && npm publish && npm run after-bump",
+        "bump-minor": "npm run pre-bump && npm version minor && npm publish && npm run after-bump",
+        "bump-major": "npm run pre-bump && npm version major && npm publish && npm run after-bump",
+        "after-bump": "git push origin master && rm -rf ./dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lillallol/ts-doc-gen-md.git"
+    },
+    "keywords": [
+        "ts",
+        "doc",
+        "gen",
+        "typescript",
+        "documentation",
+        "generation",
+        "generator",
+        "library",
+        "markdown",
+        "md"
+    ],
+    "author": "lillallol",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lillallol/ts-doc-gen-md/issues"
+    },
+    "homepage": "https://github.com/lillallol/ts-doc-gen-md#readme",
+    "dependencies": {
+        "fn-to-cli": "^2.0.3",
+        "prettier": "^2.2.1",
+        "typescript": "^4.2.4"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.23",
+        "@typescript-eslint/eslint-plugin": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.0",
+        "cspell": "^5.3.12",
+        "eslint": "^7.25.0",
+        "jest": "^26.6.3",
+        "md-in-place": "^1.0.0",
+        "npm-check-updates": "^11.5.9",
+        "ts-jest": "^26.5.5",
+        "ts-node": "^9.1.1",
+        "unimported": "^1.10.0"
+    },
+    "files": [
+        "dist"
+    ]
+}
